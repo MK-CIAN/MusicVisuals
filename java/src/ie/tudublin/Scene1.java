@@ -25,7 +25,7 @@ public class Scene1 extends PApplet {
     float[] starReact = new float[numStars];
 
     // Shooting stars variable
-    int numShootingStars = 4;
+    int numShootingStars = 20;
     float[] shootingStarX = new float[numShootingStars];
     float[] shootingStarY = new float[numShootingStars];
     float[] shootingStarSpeed = new float[numShootingStars];
@@ -61,7 +61,7 @@ public class Scene1 extends PApplet {
     }
 
     public void settings() {
-        size(1920, 1080, P3D);
+        size(1280, 800, P3D);
         //fullScreen(P3D, SPAN);
     }
 
@@ -91,7 +91,7 @@ public class Scene1 extends PApplet {
             shootingStarX[i] = random(width);
             shootingStarY[i] = random(height / 1.75f);
             // setting a ranom limit between 50 and 250
-            shootingStarSpeed[i] = random(5, 10);
+            shootingStarSpeed[i] = random(50, 250);
         }
 
     }
@@ -154,7 +154,7 @@ public class Scene1 extends PApplet {
             if (shootingStarX[i] < 4) {
                 shootingStarX[i] = width;
                 shootingStarY[i] = random(height / 2);
-                shootingStarSpeed[i] = random(5, 10);
+                shootingStarSpeed[i] = random(5, 30);
             }
         }
 
@@ -216,7 +216,7 @@ public class Scene1 extends PApplet {
         for (int y = 0; y < cols; y++) {
             float xoff = 0;
             for (int x = 0; x < rows; x++) {
-                terrain[y][x] = map(noise(xoff, yoff), 0, 1, -50, 50);
+                terrain[y][x] = map(noise(xoff, yoff), 0, 1, -75, 10);
                 xoff += 0.3f;
             }
             yoff += 0.3f;   
