@@ -61,7 +61,7 @@ public class Scene1 extends PApplet {
     }
 
     public void settings() {
-        size(1280, 800, P3D);
+        size(1920, 1080, P3D);
         //fullScreen(P3D, SPAN);
     }
 
@@ -124,7 +124,7 @@ public class Scene1 extends PApplet {
         float topOffset = height * 0.2f;
 
         colorMode(HSB, 255);
-        background(0, 10, 20);
+        background(0);
 
         // Drawing the stars randomly
         for (int i = 0; i < numStars; i++) {
@@ -158,35 +158,12 @@ public class Scene1 extends PApplet {
             }
         }
 
-
-
-
-        /*stroke(0);
-        strokeWeight(2);
-
-        // set the fill color to light brown
-        line(350, 535, 350, 710);
-        fill(30, 120, 120, 75);
-        // draw the tent with filled color
-        beginShape();
-        vertex(25, 700);
-        vertex(125, 525);
-        vertex(350, 535);
-        vertex(250, 725);
-        endShape(CLOSE);
-
-        beginShape();
-        vertex(250, 725);
-        vertex(350, 535);
-        vertex(410, 700);
-        endShape(CLOSE);
-        */
-
-        // For Northern Lights
+        // For Northern Lights, to fill the full width of the screen
         for (int i = 0; i < ab.size(); i++) {
             float c = map(i, 0, ab.size(), 50, 255);
             float amplitude = ab.get(i);
             float f = lerpedBuffer[i] * halfW * 1.0f;
+            float x = map(i, 0, ab.size(), 0, width);
 
             // Map amplitude to stroke color in HSB format
             float hue = map(amplitude, -1, 1, 100, 120);
@@ -198,12 +175,12 @@ public class Scene1 extends PApplet {
                 float weight = map(amplitude, -1, 1, 0.5f, 3);
                 strokeWeight(f / 50);
                 stroke(hue, saturation, brightness, c);
-                line(i, topOffset + f, i, topOffset - f);
+                line(x, topOffset + f, x, topOffset - f);
 
                 float alpha = map(amplitude, -1, 1, 20, 80);
                 strokeWeight(weight * 0.5f);
                 stroke(hue, saturation, brightness, alpha);
-                line(i, topOffset + (f * 0.5f), i, topOffset - (f * 0.5f));
+                line(x, topOffset + (f * 0.5f), x, topOffset - (f * 0.5f));
             }
         }
 
@@ -237,6 +214,7 @@ public class Scene1 extends PApplet {
             endShape();
         }
         endShape();
+
         /*
          * if (fadeAlpha < 255)
          * {
