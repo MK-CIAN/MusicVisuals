@@ -22,6 +22,7 @@ public class scene2 extends PApplet{
     }
 
     public void setup() {
+        colorMode(RGB);
         minim = new Minim(this);
         ap = minim.loadFile("java_bin_starryeyed.mp3", 1024);
         ap.play();
@@ -59,8 +60,9 @@ public class scene2 extends PApplet{
 
         smoothedAmplitude = lerp(smoothedAmplitude, average, 0.1f);
 
+        //Black fill
+        fill(0, 0, 255);
         beginShape();
-        noFill();
         for (int i = 0; i < ab.size(); i++) {
             float c = map(i, 0, ab.size(), 0, 255);
             stroke(c, 255, 255);
@@ -72,8 +74,8 @@ public class scene2 extends PApplet{
         }
         endShape();
 
-        beginShape();
         noFill();
+        beginShape();
         for (int i = 0; i < ab.size(); i++) {
             float c = map(i, 0, ab.size(), 0, 255);
             stroke(c, 255, 255);
