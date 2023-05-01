@@ -61,15 +61,12 @@ public class Scene1 extends PApplet {
     }
 
     public void settings() {
-        size(1920, 1080, P3D);
-        //fullScreen(P3D, SPAN);
+        //size(1920, 1080, P3D);
+        fullScreen(P3D);
     }
 
     public void setup() {
         minim = new Minim(this);
-        // Uncomment this to use the microphone
-        // ai = minim.getLineIn(Minim.MONO, width, 44100, 16);
-        // ab = ai.mix;
 
         // And comment the next two lines out
         ap = minim.loadFile("starryeyed.mp3", 1024);
@@ -91,7 +88,7 @@ public class Scene1 extends PApplet {
             shootingStarX[i] = random(width);
             shootingStarY[i] = random(height / 1.75f);
             // setting a ranom limit between 50 and 250
-            shootingStarSpeed[i] = random(50, 250);
+            shootingStarSpeed[i] = random(5, 500);
         }
 
     }
@@ -193,7 +190,7 @@ public class Scene1 extends PApplet {
         for (int y = 0; y < cols; y++) {
             float xoff = 0;
             for (int x = 0; x < rows; x++) {
-                terrain[y][x] = map(noise(xoff, yoff), 0, 1, -75, 10);
+                terrain[y][x] = map(noise(xoff, yoff), 0, 1, -95, 0);
                 xoff += 0.3f;
             }
             yoff += 0.3f;   
