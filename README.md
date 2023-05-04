@@ -45,6 +45,18 @@ The song we chose for this assignment is "starryeyed" by Ellie Goulding. We felt
 
 ![Ian & Cian scene3](images/Ian_OOP.png)
 ----
+## Joshua Flores
+- The first scene that I created involved the use of 2 perlin noise generated terrains, which contained an array of cubes that would slowly move towards the camera, and a background formed by a large circle. The terrains were formed by creating a 2D flat triangle strip mesh. After creating the flat triangle strip mesh, the z axis of each vertex on the mesh is allocated using perlin noise, which allocates each z axis smoothly, forming the wave like terrain. The terrains also react to the music, affecting how high the z axis can be allocated. The louder the music, the taller the terrain. The speed at which the terrain moves forward is also impacted by the amplitude of the music, the louder the music, the faster the terrain.
+- For the array of cubes, I used a for loop to randomly allocate the x, y, and z position for each cube. Each cube would slowly rotate, and the speed at which the cubes move towards the camera is determined by the amplitude of the music.
+Lastly, I used a large circle to encase the entire scene, adding more to the blank background.
+
+![Joshua Scene 4](images/JF_Terrain.png)
+
+- The next visual I worked on was the Sunset with the valley. Ian created the Sun element of the visuals, which I incorporatde into the scene. The sun is slimply an ellipse with a gradient of colours. The slits which travel over the sun are created using Rectangles, which form and update their position. As they move higher along the sun, the slits become smaller and smaller, creating a cool effect. The speed that the slits move is affected by the amplitude of the music, moving faster as the music becomes louder. 
+- The terrain in this scene is also formed using perlin noise. But in this case, the terrain is divided into different sections. Each section has its own max height which the perlin noise can go to, allowing for a dynamic terrain structure. With the center having the lowest max height, the further you travel outwards along the y axis, the taller the terrain becomes. Like the other scenes, the louder the music,the faster the terrain moves.
+
+![Joshua & Ian: Scene 5](images/OOP_Pic.jpg)
+
 # What I am most proud of in the assignment
 ----
 ## Cian McKenna
@@ -56,3 +68,6 @@ The song we chose for this assignment is "starryeyed" by Ellie Goulding. We felt
 - How to map and position objects on the screen better.
 - Gaining valuable team collaboration skills working as group in order to help code the scenes together and solve problems that would have taken longer to solve without another person looking at your code.
 
+## Joshua Flores
+- I am proud of what we were able to create as a group. We collaborated well with each other and helped each other whenever we needed it.
+- I learned a lot about perlin noise, and how 3D objects are created. My overall understanding of Object Oriented Programming has definitely imporoved, especially in Java. 
